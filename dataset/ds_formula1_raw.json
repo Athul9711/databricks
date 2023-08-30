@@ -1,0 +1,22 @@
+{
+	"name": "ds_formula1_raw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_formula1dl_storage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_window_end_date": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			}
+		},
+		"schema": {}
+	}
+}
