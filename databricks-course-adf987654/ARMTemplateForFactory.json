@@ -44,7 +44,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
-								"referenceName": "ds_formula1_raw1",
+								"referenceName": "ds_formula1_raw",
 								"type": "DatasetReference",
 								"parameters": {
 									"p_window_end_date": {
@@ -348,7 +348,7 @@
 				"lastPublishTime": "2023-08-07T10:55:32Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ds_formula1_raw1')]",
+				"[concat(variables('factoryId'), '/datasets/ds_formula1_raw')]",
 				"[concat(variables('factoryId'), '/linkedServices/ls_databricks_course_ws')]"
 			]
 		},
@@ -442,7 +442,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
-								"referenceName": "ds_formula1_raw2",
+								"referenceName": "ds_formula1_raw",
 								"type": "DatasetReference",
 								"parameters": {
 									"p_window_end_date": {
@@ -624,7 +624,7 @@
 				"lastPublishTime": "2023-08-07T15:27:02Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ds_formula1_raw2')]",
+				"[concat(variables('factoryId'), '/datasets/ds_formula1_raw')]",
 				"[concat(variables('factoryId'), '/linkedServices/ls_databricks_course_ws')]"
 			]
 		},
@@ -646,112 +646,15 @@
 				"type": "Json",
 				"typeProperties": {
 					"location": {
-						"type": "AzureBlobFSLocation"
+						"type": "AzureBlobFSLocation",
+						"folderPath": {
+							"value": "@formatDateTime(dataset().p_window_end_date,'yyy-MM-dd')",
+							"type": "Expression"
+						},
+						"fileSystem": "raw"
 					}
 				},
 				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ls_formula1dl_storage')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ds_formula1_raw1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ls_formula1dl_storage",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"p_window_end_date": {
-						"type": "string"
-					}
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@formatDateTime(dataset().p_window_end_date,'yyy-MM-dd')",
-							"type": "Expression"
-						},
-						"fileSystem": "raw"
-					}
-				},
-				"schema": {
-					"type": "object",
-					"properties": {
-						"constructorId": {
-							"type": "integer"
-						},
-						"constructorRef": {
-							"type": "string"
-						},
-						"name": {
-							"type": "string"
-						},
-						"nationality": {
-							"type": "string"
-						},
-						"url": {
-							"type": "string"
-						}
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ls_formula1dl_storage')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ds_formula1_raw2')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ls_formula1dl_storage",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"p_window_end_date": {
-						"type": "string"
-					}
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@formatDateTime(dataset().p_window_end_date,'yyy-MM-dd')",
-							"type": "Expression"
-						},
-						"fileSystem": "raw"
-					}
-				},
-				"schema": {
-					"type": "object",
-					"properties": {
-						"constructorId": {
-							"type": "integer"
-						},
-						"constructorRef": {
-							"type": "string"
-						},
-						"name": {
-							"type": "string"
-						},
-						"nationality": {
-							"type": "string"
-						},
-						"url": {
-							"type": "string"
-						}
-					}
-				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_formula1dl_storage')]"
