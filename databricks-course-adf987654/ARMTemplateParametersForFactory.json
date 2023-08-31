@@ -8,6 +8,9 @@
 		"ls_formula1dl_storage_accountKey": {
 			"value": ""
 		},
+		"ls_databricks_course_ws_properties_typeProperties_existingClusterId": {
+			"value": "0503-105336-o7xgar3o"
+		},
 		"ls_formula1dl_storage_properties_typeProperties_url": {
 			"value": "https://formula1dl987654.dfs.core.windows.net/"
 		}
