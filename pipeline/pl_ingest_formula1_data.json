@@ -15,16 +15,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "ds_formula1_raw1",
-						"type": "DatasetReference",
-						"parameters": {
-							"p_window_end_date": {
-								"value": "@pipeline().parameters.p_window_end_date",
-								"type": "Expression"
-							}
-						}
-					},
 					"fieldList": [
 						"exists"
 					],
