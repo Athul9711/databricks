@@ -14,7 +14,12 @@
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@formatDateTime(dataset().p_window_end_date,'yyy-MM-dd')",
+					"type": "Expression"
+				},
+				"fileSystem": "raw"
 			}
 		},
 		"schema": {}
