@@ -8,6 +8,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ingest_formula1_data",
+						"type": "PipelineReference"
+					},
 					"waitOnCompletion": true,
 					"parameters": {
 						"p_window_end_date": {
