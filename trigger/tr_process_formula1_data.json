@@ -9,7 +9,7 @@
 				"type": "PipelineReference"
 			},
 			"parameters": {
-				"p_window_end_date": "2021-03-21"
+				"p_window_end_date": "@trigger().outputs.windowEndTIme"
 			}
 		},
 		"type": "TumblingWindowTrigger",
