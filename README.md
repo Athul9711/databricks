@@ -1,1 +1,2 @@
-# databricks
+Formula1 racing using Azure Databricks, Delta Lake, and Azure Data Factory.
+Created Databricks notebooks to ingest, transform, and load Formula1 race data which has been ingested from ADLS Gen2(3 different week's data has been loaded into ADLS Gen2 here) and the final result data set has been loaded into ADLS Gen2 as delta tables.These notebooks are then triggered through ADF data pipelines which runs Databricks clusters.
